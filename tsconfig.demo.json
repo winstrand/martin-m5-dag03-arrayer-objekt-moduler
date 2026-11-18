@@ -1,9 +1,9 @@
 {
-  "extends":"",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "noEmit":false,
-    "outDir":"dev-js",
-    "rootDir":"src",
-    "rewriteRelativeImportExtensions":true
+    "noEmit": false,
+    "outDir": "dev-js",
+    "rootDir": "src",
+    "rewriteRelativeImportExtensions": true
   }
 }
