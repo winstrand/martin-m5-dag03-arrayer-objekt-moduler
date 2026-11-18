@@ -24,7 +24,6 @@ console.log(drycker.join(', '))
 //    TypeScript klagar på storlek. Beskriv objektet med en interface där storlek är valfri (storlek?: string).
 // d) skriv ut Object.keys(kopp)
 // TODO
-
 interface Kopp {
   namn: string
   pris: number
@@ -43,3 +42,11 @@ console.log(Object.keys(kopp))
 // b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt
 // c) skriv ut namnet på den sista rätten utan att veta antalet (tips: length - 1)
 // TODO
+console.log(meny.length)
+console.log(meny[0].namn)
+
+for (const dish of meny) {
+  console.log(`${dish.namn} - ${dish.pris} kr`)
+}
+
+console.log(meny[meny.length - 1].namn)
