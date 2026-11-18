@@ -1,15 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dag 3 – Arrayer, objekt och moduler</title>
-  <!-- type="module" gör att filen kan använda import och export -->
-  <script type="module" src="/src/main.ts"></script>
-</head>
-<body>
-  <h1>Dag 3: Arrayer, objekt och moduler</h1>
-  <p>Delövningarna skriver ut i <strong>Console</strong> (F12). Funktionerna testas på <a href="tests.html">tests.html</a>.</p>
-  <p><strong>Viktigt:</strong> starta servern med npm run dev och öppna adressen. Moduler fungerar inte om du dubbelklickar på filen.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dag 3 – Arrayer, objekt och moduler</title>
+    <!-- type="module" gör att filen kan använda import och export -->
+    <script type="module" src="./src/main.ts"></script>
+    <!--
+    Utan module :
+    Då vet inte läsaren hur den skall hantera import i javascript då detta inte var
+    definierat i äldre typer av HTML
+
+    utan typp='module' så får man
+     Uncaught SyntaxError: import declarations may only appear at top level of a module
+
+    Fel filnamn / ej existerande fil :
+    När webbläsaren parsar script-filen så kommer den att föröka öppna
+    obefinglig fil och då smäller det
+
+     och om man har fel filnamn i importen :
+     [plugin:vite:import-analysis] Failed to resolve import "./datat" from "src/main.ts". Does the file exist
+     och
+     Loading module from “http://localhost:5173/src/main.ts?t=1795031584104” was
+      blocked because of a disallowed MIME type (“”)
+
+    Dubbel-klick:
+    Felen är XSR begränsade man får inte öppna java/typescript hur somhelst i dagens
+    webbrowsers.
+
+    Dubbel-klick på filen index.html (öppna den från filhanterare) ger:
+    Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
+    remote resource at file:///src/main.ts. (Reason: CORS request not http).
+
+    eller om man ändrad fil sökvägen till ./src/main.ts :
+    Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
+    remote resource at file:///D:/Library/Lexicon/modul5/dag03-arrayer-objekt-moduler/src/main.ts. (Reason: CORS request not http).
+     -->
+  </head>
+  <body>
+    <h1>Dag 3: Arrayer, objekt och moduler</h1>
+    <p>
+      Delövningarna skriver ut i <strong>Console</strong> (F12). Funktionerna
+      testas på <a href="tests.html">tests.html</a>.
+    </p>
+    <p>
+      <strong>Viktigt:</strong> starta servern med npm run dev och öppna
+      adressen. Moduler fungerar inte om du dubbelklickar på filen.
+    </p>
+  </body>
 </html>
