@@ -8,7 +8,7 @@ import type { Ratt, OrderRad } from './typer'
 export function vegetariskaRatter(meny: Ratt[]): Ratt[] {
   // TODO
   // Skriva en metod som returerar alla vegetarisaka rätter i listan som
-  // skickas in. I denna metod är det best att använda sig av filter...
+  // skickas in. I denna metod är det bäst att använda sig av filter...
   return meny.filter((ratt) => ratt.vegetarisk === true)
 }
 
@@ -25,9 +25,12 @@ export function prislista(meny: Ratt[]): string[] {
   // TODO
   // Skall göra en lista med alla rätters namn och deras pris.
   // Även i denna metod är det bra att använda sig av map-metoden
-
-  //return meny.map((ratt) => `${ratt.namn} – ${formateraPris(ratt.pris)}`)
   return meny.map((ratt) => `${ratt.namn} - ${formateraPris(ratt.pris)}`)
+  /*
+	Vad är det för skillnad med denna rad?? Nedanstående rad har jag RnD:at
+	och den fungerar
+	return meny.map((ratt) => `${ratt.namn} – ${formateraPris(ratt.pris)}`)
+	*/
 }
 
 // 4. Hitta en rätt via id (find). Returnerar objektet, eller undefined om det saknas.
@@ -81,5 +84,8 @@ export function perKategori(meny: Ratt[]): Record<string, number> {
 // 9. En kopia av rätten med nytt pris. Originalet får INTE ändras (spread: { ...ratt }).
 export function medNyttPris(ratt: Ratt, nyttPris: number): Ratt {
   // TODO
+  // Att göra som nedan med spred ...ratt genererar en ny variablen utan att man
+  // ändrar den gamla. skulle man använda sig av ratt.pris = nyttPris så kommer
+  // värdet i orginal-variabeln att ändras och hela poängen försvinner...
   return { ...ratt, pris: nyttPris }
 }
