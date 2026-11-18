@@ -44,6 +44,12 @@ console.log(Object.keys(kopp))
 // TODO
 console.log(meny.length)
 console.log(meny[0].namn)
+/*
+ använder [] på menyn för att få rätt index då det inte går att nå resp. del
+ del i menyn om man användersig av punkt notation.
+ Och jag anväder punktnotation när jag vill komma åt värdet för attributet på
+ objektet som jag valt med index.
+ */
 
 for (const dish of meny) {
   console.log(`${dish.namn} - ${dish.pris} kr`)
